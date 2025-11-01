@@ -1,0 +1,11 @@
+name: Accessibility Scanner
+on: workflow_dispatch # This configures the workflow to run manually, instead of (e.g.) automatically in every PR. Check out https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#on for more options.
+
+jobs:
+  accessibility_scanner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: github/accessibility-scanner@v2
+        with:
+          urls: | # Provide a newline-delimited list of URLs to scan; more information below.
+            https://doit.maryland.gov/About-DoIT/Documents/Maryland-Information-Technology-Master-Plan-2025.pdf
